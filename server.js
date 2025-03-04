@@ -18,7 +18,7 @@ app.post('/sing-up', (req,res)=>{
         return res.status(400).json({message : "Username cannot be empty"});
     }else if(!Email){
         return res.status(400).json({message : "Email cannot be empty"});
-    }else if(!(!(Password <= 8) || !(Password > 16))){
+    }else if(!(!(Password.length <= 8) || !(Password.length > 16))){
         return res.status(400).json({message : "Password length should be greater than 8 or less than and equals to 16"});
     }else{
         res.status(201).json({
